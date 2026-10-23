@@ -1,0 +1,8 @@
+numpy
+scipy
+opencv-python-headless
+scikit-learn
+pandas
+# optional, only for the MobileNetV3 / LiteSCVQA+ branch
+onnx
+onnxruntime
