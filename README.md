@@ -90,4 +90,4 @@ The repository is maintained by **Chunjiang Zhao**, sole author of the associate
 
 **License:** no software reuse license has yet been granted. Public readability does not imply permission to redistribute or adapt this source; licensing can be added after the author selects one.
 
-See [docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md) for reproducibility limitations.
+See [docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md) for protocols and [docs/RESULTS.md](docs/RESULTS.md) for the audited summary metrics and limitations.
