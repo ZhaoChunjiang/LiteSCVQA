@@ -1,10 +1,30 @@
+# Python
 __pycache__/
-*.pyc
-*.mp4
-*.onnx
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Local datasets and video/model binaries (do not redistribute by accident)
 msu/
 msu_feats/
+synth/
+models/
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.webm
+*.onnx
+*.joblib
+*.pkl
+*.pickle
+
+# Locally generated intermediate results / sensitive trial data
 *.csv
-*.json
-*.txt
-!requirements.txt
+hybrid_results*.json
+full_eval_results*.json
+extra_eval.json
+v*_environment.json
+tmp.mp4
+.DS_Store
