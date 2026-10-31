@@ -29,7 +29,7 @@ This also runs a 70/30 protocol and first-30-split feature ablation, using its o
 
 Do not substitute the `litescvqa_eval.py` CLI for exact article reproduction: that helper performs nested hyperparameter selection and has different model defaults.
 
-## Deep / BRISQUE baselines
+## Independent five-fold held-out-source evaluation\n\nThe fixed source IDs are provided at [`protocols/five_fold_groups.json`](../protocols/five_fold_groups.json). Run the following after the feature CSVs and MOS labels have been obtained/generated:\n\n```bash\npython scripts/evaluate_fivefold.py --features 'msu_feats/b_*.csv' --mos msu/mos.csv --folds protocols/five_fold_groups.json --out fivefold_oof_predictions.csv\n```\n\nOn the author's 1,600-video saved feature tables, an independent rerun yielded mean per-content SRCC **0.852253**, consistent with 0.8523 reported in the manuscript. This script uses only the handcrafted 67-D LiteSCVQA features and fixed GBR. The original dataset/videos/scores are **not** bundled here.\n\n## Deep / BRISQUE baselines
 
 Obtain a compatible MobileNetV3-Small ONNX backbone and generate `msu_deep.csv` with `deep_feats.py`, or supply an existing matching table. The ONNX architecture and exported tensor name must match `deep_feats.py`. Regressors must be fitted only on training groups, and PCA must be fitted exclusively on the training rows.
 
