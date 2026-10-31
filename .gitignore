@@ -28,3 +28,18 @@ extra_eval.json
 v*_environment.json
 tmp.mp4
 .DS_Store
+
+# Local working documents and archives
+*.docx
+*.xlsx
+*.pdf
+*.zip
+*.h5
+*.hdf5
+
+# Credentials (never commit)
+.env
+.env.*
+*.pem
+*.key
+*.p12
