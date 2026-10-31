@@ -41,6 +41,16 @@ python -m pip install -r requirements.txt
 
 MobileNetV3 experiments additionally need ONNX / ONNX Runtime and a compatible `models/mnv3s.onnx` model, which is **not supplied** in this repository.
 
+## Quick smoke test
+
+From the repository root:
+
+```bash
+PYTHONPATH=. python scripts/smoke_test.py
+```
+
+This checks the 66-value extractor plus the separately exported key-frame ratio. It is not a reproduction of subjective quality results.
+
 ## Feature extraction
 
 ```bash
