@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this research software, please cite the associated LiteSCVQA manuscript when published. Until then, cite the repository."
+title: "LiteSCVQA: A Lightweight No-Reference Quality Assessment Model for Screen Content Videos"
+type: software
+authors:
+  - family-names: Zhao
+    given-names: Chunjiang
+repository-code: "https://github.com/ZhaoChunjiang/LiteSCVQA"
