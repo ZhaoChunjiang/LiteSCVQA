@@ -13,6 +13,10 @@ Video IDs and quality labels must match exactly. The standard MSU release contai
 
 Use `python scripts/check_msu_inputs.py --features 'msu_feats/b_*.csv' --mos msu/mos.csv` before training.
 
+## Public source-content split IDs
+
+The five mutually exclusive source-content test folds (100 contents, 20 IDs per fold) are available in [`protocols/five_fold_groups.json`](../protocols/five_fold_groups.json). These are source identifiers only; no source video files, copyrighted subjective scores, or subject-identifying personal records are included. The 100 repeated 80/20 and 70/30 partitions are reproducible via the fixed NumPy RNG protocol in `full_eval.py`. The author's complete per-split records exist separately and are not bundled with this repository.
+
 ## Primary analysis
 
 The paper's main fixed-regressor evaluation uses 100 random source-disjoint splits: 20 held-out source contents of 100 per split. Training uses the other 80 content groups, not the test groups. The random selection is generated with `numpy.random.default_rng(0)` over sorted group IDs in `full_eval.py`. Hyperparameters of the published default GBR: 300 estimators; max depth 3; learning rate 0.05; subsample 0.8; random state 0.
