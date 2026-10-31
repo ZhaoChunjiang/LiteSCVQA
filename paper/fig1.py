@@ -79,7 +79,7 @@ arrow(63.2, 42.5, 65.5, 42.5)
 # ---------------- Temporal module ----------------
 group(16, 2, 40, 26, "Temporal module (from $d_t$ only)", C_S)
 box(18, 14.5, 17, 10.5, "Frozen-run analysis", "static: $d_t<10^{-4}$\nrun length $L$, motion\nbefore, jump $J$ after")
-box(37, 14.5, 17, 10.5, "Stall rule (Eq. 7)", "moving before,\n$2\\leq L\\leq 2r$,\n$J>\\gamma m$, $\\gamma=1.2$")
+box(37, 14.5, 17, 10.5, "Stall rule (Eq. 7)", "moving before,\n$2\\leq L\\leq 2r$,\n$J>\\gamma m$, $\\gamma=3$")
 box(18, 3.5, 36, 8.5, "8 temporal features  $\\mathbf{t}$",
     "stall rate, stalled-time fraction, longest stall, mean jump,\nstatic fraction, median motion, motion CV, page-change rate", fc="#fdf1e6")
 arrow(36, 37, 26.5, 25.3)
@@ -105,18 +105,18 @@ ax.text(96.2, 31, "19-d $\\mathbf{s}_k$\nper key frame", fontsize=7, ha="right",
 # key frames -> pass 2
 ax.annotate("", xy=(72.5, 25.3), xytext=(72, 36.8),
             arrowprops=dict(arrowstyle="-|>", lw=1.2, color="#333", connectionstyle="arc3,rad=0"))
-ax.text(73, 30.2, "decode only\nkey frames", fontsize=6.8, ha="left", color="#333")
+ax.text(73, 30.2, "retrieve and analyse\nkey frames", fontsize=6.8, ha="left", color="#333")
 
 # ---------------- pooling + regression ----------------
 box(83, 35.5, 16, 16, "Temporal pooling", "per spatial feature:\nmean, $P_{10}$, $P_{90}$\n(19$\\times$3 = 57)\n+ text-sharpness\nfluctuation CV (1)", fc="#f7f7f7")
 arrow(97, 15.2, 97, 35.3)
-box(103, 35.5, 15, 16, "Descriptor", "$\\mathbf{z}\\in\\mathbb{R}^{66}$\n(Eq. 8)\n57 + 1 + 8", fc="#fffbe6")
+box(103, 35.5, 15, 16, "Descriptor", "$\\mathbf{z}\\in\\mathbb{R}^{67}$\n(Eq. 8)\n57 + 1 + 8 + 1", fc="#fffbe6")
 arrow(99.3, 43.5, 103, 43.5)
 # temporal features -> descriptor
 ax.plot([36, 36, 101, 101], [3.3, -1.0, -1.0, 40], color=C_S, lw=1.2)
 arrow(101, 40, 103, 40, c=C_S)
 ax.text(78, -1.4, "temporal features $\\mathbf{t}$ (8)", color=C_S, fontsize=7, ha="center", va="top")
-box(103, 13, 15, 13, "Regression", "standardise\n(train stats)\nSVR-RBF\n(RF / GBR / MLP)", fc="#eef8ef")
+box(103, 13, 15, 13, "Regression", "GBR (300 trees)\ndepth 3\nno feature scaling", fc="#eef8ef")
 # descriptor -> regression : route right side
 ax.annotate("", xy=(116, 26.3), xytext=(116, 35.3), arrowprops=dict(arrowstyle="-|>", lw=1.2, color="#333"))
 box(103, 2.5, 15, 7, "Quality $\\hat q$", fc="#2f6db5", ec="#2f6db5", tc="white", fs=9.5)
