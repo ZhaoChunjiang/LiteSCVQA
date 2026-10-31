@@ -5,7 +5,7 @@ LiteSCVQA - Step 2: quality regression + evaluation
 Dependencies (CPU only):  pip install numpy scipy scikit-learn pandas
 
 Inputs
-    features.csv  from litescvqa_features.py   (column "video" + feature columns)
+    features.csv  from litescvqa_features.py   (column "video", "key_ratio", "seconds" + 66 feature columns)
     mos.csv       subjective scores            (columns: video, mos [, group])
                   "group" = source/reference content id. Videos from the same source never
                   appear in both train and test. If omitted, group = first folder of "video"
@@ -45,7 +45,7 @@ from sklearn.impute import SimpleImputer
 
 warnings.filterwarnings("ignore")
 
-META_COLS = {"video", "key_ratio", "seconds", "mos", "group"}
+META_COLS = {"video", "seconds", "mos", "group"}
 
 # Feature groups for ablation (prefix match on column names)
 FEATURE_GROUPS = {
